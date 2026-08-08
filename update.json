@@ -1,9 +1,17 @@
-{
-  "Creator": "BryanDev.",
-  "Version": "1.0.0",
-  "Type": "Major update",
-  "Updates": {
-    "Files": "",
-    "Code": ""
+[
+  {
+    "Creator": "BryanDev.",
+    "Version": "1.0.0",
+    "Type": "Major update",
+    "Updates": [
+      {
+        "Files": "system/handler.ts",
+        "Code": "..."
+      },
+      {
+        "Files": "plugins/user/me.ts",
+        "Code": "..."
+      }
+    ]
   }
-}
+]
