@@ -1,7 +1,7 @@
 {
   "Creator": "BryanDev.",
-  "Version": "1.0.1",
-  "Type": "Major Update",
+  "Version": "1.0.3",
+  "Type": "Beta Update",
   "Updates": [
     {
       "Files": "system/sockets.ts",
