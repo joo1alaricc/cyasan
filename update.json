@@ -5,6 +5,11 @@
   "Updates": {
     "added": [],
     "deleted": [],
-    "modified": []
+    "modified": [
+      {
+        "Files": "index.ts",
+        "Code": "import{config as t}from\"./config.ts\";import{showWelcome as a,logMessage as s}from\"./system/console.ts\";import{startBot as o}from\"./system/sockets.ts\";import{serealize as e}from\"./system/serealize.ts\";import r from\"./system/handler.ts\";import{handleGroupParticipants as c}from\"./system/groups.ts\";import n from\"./system/lid.ts\";import{applyGroupMetadata as i}from\"./system/database.ts\";(async()=>{await a(t);const p=await o();p&&(p.ev.on(\"messages.upsert\",async({messages:t,type:a})=>{try{if(\"notify\"!==a)return;const o=t[0];if(!o?.message)return;const c=await e(o,p);if(!c)return;if(c.chat?.endsWith(\"@g.us\")){try{const t=await p.groupMetadata(c.chat);i(t)}catch{}const t=global.db?.groups?.[c.chat];if(t&&!0===t.mute){const a=c.sender,s=a===global.owner+\"@s.whatsapp.net\",o=global.dev.map(t=>t+\"@s.whatsapp.net\").includes(a),e=t.admins?.includes(a);if(!s&&!o&&!e)return}if(t&&!0===t.countchat&&!c.fromMe){global.db.countchat||={},global.db.countchat[c.chat]||={};const t=c.sender;global.db.countchat[c.chat][t]=(global.db.countchat[c.chat][t]||0)+1}}await r(p,c),await s(c,p)}catch(t){console.error(\"✘ INDEX ERROR:\",t)}}),p.ev.on(\"group-participants.update\",async t=>{try{await c(p,t)}catch(t){console.log(\"✘ group participants update error:\",t)}}),p.ev.on(\"groups.update\",async t=>{try{for(const a of t)if(a?.id){const t=await p.groupMetadata(a.id);n.saveLidFromMetadata(t),i(t)}}catch(t){console.log(\"✘ group update error:\",t)}}))})();"
+      }
+    ]
   }
 }
