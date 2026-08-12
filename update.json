@@ -4,7 +4,11 @@
   "Type": "Minor Update",
   "Updates": {
     "added": [],
-    "deleted": [],
+    "deleted": [
+      {
+        "Files": "system/game.ts"
+      }
+    ],
     "modified": [
       {
         "Files": "system/console.ts",
